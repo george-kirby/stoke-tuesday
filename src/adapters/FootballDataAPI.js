@@ -1,7 +1,9 @@
+import Keys from '../../Keys'
+
 const LEAGUE_IDS = {PremierLeague: 2021}
 
 const FOOTBALL_DATA_ENDPOINT = "https://api.football-data.org/v2/"
-const FOOTBALL_DATA_KEY = "9f2b5a07eb824324a589907375f424c9"
+const FOOTBALL_DATA_KEY = Keys.REACT_APP_KEY_FOOTBALL_DATA
 
 const getResultsByTeamId = teamId => {
     return fetch(`${FOOTBALL_DATA_ENDPOINT}teams/${teamId}/matches?status=FINISHED&limit=10`, {
