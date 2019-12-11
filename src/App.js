@@ -15,13 +15,18 @@ function App() {
     setClubs(FootballDataAPI.PLClubs1920)
   }, []);
 
+  const selectedClub = () => {
+    return clubs.find(club => club.id === selectedClubId)
+  }
+
   return (
     <div>
       <h2 className="main-header">But can they do it on a cold, wet, Tuesday night in Stoke?</h2>
-      {selectedClubId} ?
-      <SelectedClub/>
+      {selectedClubId ?
+      <SelectedClub club={selectedClub()} {...{ setSelectedClubId }}/>
       :
       <ClubList {...{clubs, setSelectedClubId}}/>
+  }
     </div>
   );
 }
