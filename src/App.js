@@ -23,7 +23,7 @@ function App() {
     <div>
       <h2 className="main-header">But can they do it on a cold, wet, Tuesday night in Stoke?</h2>
       {selectedClubId ?
-      <SelectedClub club={selectedClub()} {...{ setSelectedClubId }}/>
+      <SelectedClub club={selectedClub()} {...{ clubs, setSelectedClubId }}/>
       :
       <ClubList {...{clubs, setSelectedClubId}}/>
   }
