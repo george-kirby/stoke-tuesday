@@ -1,4 +1,4 @@
-import Keys from '../../Keys'
+import Keys from './Keys'
 
 const LEAGUE_IDS = {PremierLeague: 2021}
 
