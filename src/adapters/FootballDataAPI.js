@@ -5,14 +5,13 @@ const LEAGUE_IDS = {PremierLeague: 2021}
 const FOOTBALL_DATA_ENDPOINT = "https://api.football-data.org/v2/"
 const FOOTBALL_DATA_KEY = Keys.REACT_APP_KEY_FOOTBALL_DATA
 
-const getResultsByTeamId = teamId => {
-    return fetch(`${FOOTBALL_DATA_ENDPOINT}teams/${teamId}/matches?status=FINISHED&limit=10`, {
+const getResultsByTeamAndCompetition = (teamId, competitionId) => {
+    return fetch(`${FOOTBALL_DATA_ENDPOINT}teams/${teamId}/matches?status=FINISHED&competitions=${competitionId}`, {
         headers: {
             "X-Auth-Token": FOOTBALL_DATA_KEY
         }
     })
     .then(resp => resp.json())
-    .then(console.log)
 }
 
 const getClubsByLeagueId = leagueId => {
@@ -408,4 +407,4 @@ const PLClubs1920 = [
       ]
 
 
-export default { getResultsByTeamId, getClubsByLeagueId, PLClubs1920 }
+export default { getResultsByTeamAndCompetition, getClubsByLeagueId, PLClubs1920, LEAGUE_IDS }
