@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FootballDataAPI from './adapters/FootballDataAPI'
-import ClubSelect from './components/ClubSelect'
+import ClubList from './components/ClubList'
+import SelectedClub from './components/SelectedClub'
 import './App.css';
 
 function App() {
@@ -17,7 +18,10 @@ function App() {
   return (
     <div>
       <h2 className="main-header">But can they do it on a cold, wet, Tuesday night in Stoke?</h2>
-      <ClubSelect {...{clubs, setSelectedClubId}}/>
+      {selectedClubId} ?
+      <SelectedClub/>
+      :
+      <ClubList {...{clubs, setSelectedClubId}}/>
     </div>
   );
 }
